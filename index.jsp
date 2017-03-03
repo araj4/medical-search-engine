@@ -5,9 +5,15 @@
 
 
 --%>
+<%@ page import="java.sql.*" %> 
+<%@ page import="java.io.*" %> 
+<%@ page import= "java.sql.Connection"  %> 
+<%@ page import= "java.sql.DriverManager"  %> 
+<%@ page import= "java.sql.SQLException"  %>
+<%@ page import= "java.util.Scanner"  %>   
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
     <head>
         <style>
 p
@@ -85,25 +91,38 @@ p.padding {
          <!-- var lk="https://scholar.google.ca/scholar?hl=en&q=fever&btnG=&as_sdt=1%2C5&as_sdtp"!-->
          function generatelink()
          {
-           
            var gen = document.getElementById("lnken").value; 
            symp=gen.toLowerCase();
-           <!--!-->
+           var strArray= symp.split(" ");
+           for (i=0; i<strArray.length; i++)
+           {
+               if((strArray[i]==="fever" )|| (strArray[i]==="diarrhea") || (strArray[i]==="insomnia")|| (strArray[i]==="cold") || (strArray[i]==="cough") || (strArray[i]==="sneezing"))
+               {
+                   var lk="https://scholar.google.ca/scholar?hl=en&q=diseases+with+"+strArray[i]+"&btnG=&as_sdt=1%2C5&as_sdtp";   
+               }
+                   
+              
+           }
+            
+            return lk;        
+         }  
+          </script>            
+           <!--
            var gen1 = gen.replace(" ", "+");
-           <!--!-->
+           <!--
            if ((symp==="fever" )|| (symp==="diarrhea") || (symp==="blood pressure")|| (symp==="high blood pressure")
            || (symp==="low blood pressure")|| (symp==="diabetes")|| (symp==="blood in urine")|| (symp==="cough")
            || (symp==="cold")|| (symp==="cough and cold")|| (symp==="sinus")|| (symp==="high sugar level")
            || (symp==="insomnia"))
            {
-           var lk="https://scholar.google.ca/scholar?hl=en&q=diseases+with+"+gen1+"&btnG=&as_sdt=1%2C5&as_sdtp";
+           //var lk="https://scholar.google.ca/scholar?hl=en&q=diseases+with+"+gen1+"&btnG=&as_sdt=1%2C5&as_sdtp";
            }
            else
-           {alert("Invalid symptoms");
-           gen = ""; }
-           return lk;        
-         }
-    </script>    
+           {//alert("Invalid symptoms");
+           //gen = ""; }
+           //!-->
+          
+     
      <!-- replace(gen," ","+");
      
      
@@ -137,6 +156,18 @@ p.padding {
   <img src="3.JPG" alt="" style="position:absolute;top:100px;right:540px; height:150px;width:350px;"/>
   <img src="2.JPG" alt="" style="position:absolute;top:300px;right:530px; height:160px;width:350px;" >
  </p>
+ <% 
+try {
+            String connectionURL = "jdbc:mysql://localhost:3306/web_info";
+            Connection connection = null; 
+            Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+            connection = DriverManager.getConnection(connectionURL, "root", "1234567890");
+            if(!connection.isClosed())
+                 out.println("Successfully connected to " + "MySQL server using TCP/IP...");
+            connection.close();
+        }catch(Exception ex){
+            out.println("Unable to connect to database"+ex);
+        } 
+%>
 
     </body>
-</html>
