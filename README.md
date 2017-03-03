@@ -23,6 +23,8 @@ As on 02-March-2017: Based on the project constraints, we have used MySql so as 
 We had added mySql-j-connector in the libraries of java so as to establish the connection with our database.
 Database, named web_info, is created using the data from ICD 10 2016 downloaded in a .csv format and then importing it in database at our end. 
 #
+As on 03-March-2017: Implemented the logic of string manipulation.
+#
 The link for downloading the ICD 10 data :
 #
 https://www.cob.cms.hhs.gov/Section111/help/icd10.dx.codes.htm
