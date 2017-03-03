@@ -2,7 +2,8 @@
     Document   : index
     Created on : Feb 23, 2017, 11:53:23 AM
     Author     : Ankit,Grewal,Raman
- 
+
+
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,12 +23,69 @@ p.padding {
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <title>I-MedWiki</title>
     </head>
+     <!--
+     <script>
+     public static void main(String[] args) throws Exception {
+        System.out.println("code...\n"); 
+
+    String key="d5afef5e255701e19e3e25102006f3a4f8952c54";
+    String qry="fever";
+    URL url = new URL(
+            "https://www.googleapis.com/customsearch/v1?key="+key+ "&cx=013036536707430787589:_pqjad5hr1a&q="+ qry + "&alt=json");
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setRequestMethod("GET");
+    conn.setRequestProperty("Accept", "application/json");
+    BufferedReader br = new BufferedReader(new InputStreamReader(
+            (conn.getInputStream())));
+
+    String output;
+    System.out.println("Output from Server .... \n");
+    while ((output = br.readLine()) != null) {
+
+        if(output.contains("\"link\": \"")){                
+            String link=output.substring(output.indexOf("\"link\": \"")+("\"link\": \"").length(), output.indexOf("\","));
+            //System.out.println(link);       //Will print the google search links
+        }     
+    }
+    conn.disconnect();                              
+}
+     </script>!-->
+     
+    <!-- <script type="text/javascript">
+        function connectionf()
+         {
+     /*var key="d5afef5e255701e19e3e25102006f3a4f8952c54";
+    var qry="fever",link="";
+    URL url = new URL(
+            "https://www.googleapis.com/customsearch/v1?key="+key+ "&cx=013036536707430787589:_pqjad5hr1a&q="+ qry + "&alt=json");
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setRequestMethod("GET");
+    conn.setRequestProperty("Accept", "application/json");
+    BufferedReader br = new BufferedReader(new InputStreamReader(
+            (conn.getInputStream())));
+
+    var output;
+    System.out.println("Output from Server .... \n");
+    while ((output = br.readLine()) != null) {
+
+        if(output.contains("\"link\": \"")){                
+            link=output.substring(output.indexOf("\"link\": \"")+("\"link\": \"").length(), output.indexOf("\","));
+            //System.out.println(link);       //Will print the google search links
+        
+        
+        }     
+    }
     
+    conn.disconnect(); 
+    return (link);
+         }
+     </script>
+     !-->
     <script type="text/javascript">
          <!-- var lk="https://scholar.google.ca/scholar?hl=en&q=fever&btnG=&as_sdt=1%2C5&as_sdtp"!-->
          function generatelink()
          {
-             
+           
            var gen = document.getElementById("lnken").value; 
            symp=gen.toLowerCase();
            <!--!-->
@@ -46,7 +104,19 @@ p.padding {
            return lk;        
          }
     </script>    
+     <!-- replace(gen," ","+");
      
+     
+     <!--script type="text/javascript">
+         function connectionf()
+         { var link;
+         connectn con = new connectn();
+         link=con.main();
+         System.out.println(link);
+         return link;
+         
+    }
+         </script!-->
          
     <body>
         <div class="w3-container">
@@ -56,7 +126,11 @@ p.padding {
             left: 340px;font-size:20px;" placeholder="Symptoms">
 	<input type=button id="search" style="position:absolute;top:250px;right:370px; height:46px;width:50px;" >
         <img src="search.jpg" alt="GO" style="position:absolute;top:250px;right:370px; height:46px;width:50px;"
-             onclick="window.location.href=generatelink()"> 
+             onclick="window.location.href=generatelink()">
+        <!--=connectionf()">!-->
+        <!--img src="search.jpg" alt="GO" style="position:absolute;top:250px;right:370px; height:46px;width:50px;"
+             onclick="window.location.href='https://scholar.google.ca/scholar?hl=en&q=symptoms&btnG=&as_sdt=1%2C5&as_sdtp'">/!-->
+        <!--'https://scholar.google.ca/scholar?hl=en&q=symptoms&btnG=&as_sdt=1%2C5&as_sdtp'">/>!-->
  </form>
  </div>
  <p> 
