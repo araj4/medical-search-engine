@@ -6,6 +6,15 @@ Ankit Raj, Jasmeet Singh Grewal and Ramanpreet Kaur Deol
 #Objective:
 To build a medical search engine which is capable of generating
 catagorical search results based on the string entered by the user.
+#Key Features:
+#
+Efficient to generate high quality content: This search engine would be self-efficient to search the symptoms based on the disease that encounters with them. No such results would be fetched that does not have any medical background such as research journal or scholar papers related to the topic (symptom) being searched.
+#
+Non-redundancy: There would be no duplicate data fetched through this application.
+#
+Non-Clumsiness: The links or data fetched would be well categorized on the basis of different diseases that have the same symptoms.
+
+Single Objective Search engine: Since the search engine would basically serve as a medical dictionary, thus, there would be no results for any term outside the medical scope
 #Prototype: (Invisio)
 https://projects.invisionapp.com/share/BFA6L4CW9
 #Comment:- 
