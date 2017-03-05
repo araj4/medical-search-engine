@@ -28,11 +28,11 @@ As on 03-March-2017: Implemented the logic of string manipulation.
 #
 As on 05-March-2017 : Implemented the phase 1 development along with proper constraints as required by project.
 #
-Need to copy find.jsp in web folder of source
+Copied find.jsp in web folder of source
 #
-Need to copy web.xml and mysql-connector-java-5.1.41-bin in ..\web\WEB-INF of project
+Copied web.xml and mysql-connector-java-5.1.41-bin in ..\web\WEB-INF of project
 #
-Need to copy DatabaseConn.java in ..\src\java folder of project
+Copied DatabaseConn.java in ..\src\java folder of project
 #
 The link for downloading the ICD 10 data :
 #
