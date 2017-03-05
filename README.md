@@ -6,7 +6,8 @@ Ankit Raj, Jasmeet Singh Grewal and Ramanpreet Kaur Deol
 #Objective:
 To build a medical search engine which is capable of generating
 catagorical search results based on the string entered by the user.
-
+#Prototype: (Invisio)
+https://projects.invisionapp.com/share/BFA6L4CW9
 #Comment:- 
 The project uses jsp as front end along with collaboration of Apache-Tomcat server.
 Currently it is using MySql for backend operations 
