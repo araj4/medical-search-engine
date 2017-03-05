@@ -35,6 +35,8 @@ Database, named web_info, is created using the data from ICD 10 2016 downloaded 
 #
 As on 03-March-2017: Implemented the logic of string manipulation.
 #
+As on 04-March-207: Implemented MVC architecture.
+#
 As on 05-March-2017 : Implemented the phase 1 development along with proper constraints as required by project.
 #
 Copied find.jsp in web folder of source
@@ -60,6 +62,7 @@ http://icd10codelink.com/
 3) Apache Tomcat Server
 #
 4) Netbeans(optional if you wish to work on codes)
+
 
 #Setup Instructions:
 1_a) Setting up database: Create a database and name it web_info (also need to update the root password as per your database in the respective connector files).
