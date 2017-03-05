@@ -25,6 +25,14 @@ Database, named web_info, is created using the data from ICD 10 2016 downloaded 
 #
 As on 03-March-2017: Implemented the logic of string manipulation.
 #
+As on 05-March-2017 : Implemented the phase 1 development along with proper constraints as required by project.
+#
+Need to copy find.jsp in web folder of source
+#
+Need to copy web.xml and mysql-connector-java-5.1.41-bin in ..\web\WEB-INF of project
+#
+Need to copy DatabaseConn.java in ..\src\java folder of project
+#
 The link for downloading the ICD 10 data :
 #
 https://www.cob.cms.hhs.gov/Section111/help/icd10.dx.codes.htm
