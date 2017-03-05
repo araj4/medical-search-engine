@@ -41,8 +41,8 @@ https://www.cob.cms.hhs.gov/Section111/help/icd10.dx.codes.htm
 and 
 #
 http://icd10codelink.com/
-#
-Pre-requisites:
+
+#Pre-requisites:
 #
 1) Java 7 or higher version
 #
