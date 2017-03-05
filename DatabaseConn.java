@@ -4,6 +4,13 @@
  * and open the template in the editor.
  */
 
+//************************Imported library to check duplication (not used)*******************
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+//************************Finally implemented duplicate check using loops*******************
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -47,16 +54,41 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     out.println("<head><title>Disease Details</title></head>");
     out.println("<body background=\"bg1.jpg\">");
     out.println("<center><h1>What Are You Exactly Looking For?</h1>");
+     //************************Feature 2> Non-Clumsiness *********************\
     out.println("<Table border=2><h2><tr><td><center><b> ICD-10 Codes</b></center></td><td><center><b> Disease Description and Related Journals</b></center></td></tr></h2>");
     
       String connectionURL = "jdbc:mysql://localhost:3306/web_info";
       Connection connection=null;
       Statement s=null;
       ResultSet rs=null;
+      String var1=null;
+      int var2=0;
       String search1=request.getParameter("search"); 
       String symp;
       symp = search1.toLowerCase();      
       String[] strArray = symp.split(" ");
+      /* ***************For duplicate check tried with hash function*****************
+     String text = request.getParameter("search");
+     List<String> list = Arrays.asList(text.split(" "));
+     Set<String> uniqueWords = new HashSet<String>(list);
+     symp = List.toLowerCase();      
+      String[] strArray = symp.split(" ");
+      **************Then finally concluded with for-loops**************************/
+      for (int k=0; k<strArray.length; k++)
+            {
+//****************************Feature 1> Non-Redundancy Check*********************\\
+                for(int l=0; l<strArray.length;l++){
+                    System.out.println("1--"+strArray[k]);
+                    if(k!=l){
+                        System.out.println("2--"+strArray[l]);
+                        if(strArray[l].equals(strArray[k])){
+                           strArray[l]="_"; 
+                        }
+                    }
+                }
+            }
+      
+ //******************************Non-Redundancy Check*******************************\\
       response.setContentType("text/html"); 
       try {
      // Load the database driver
@@ -68,14 +100,12 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
       {
           for (int i=0; i<strArray.length; i++)
             {
-          
               
               s = connection.createStatement();
          String QueryString = "select code, short_description from icd where  lower(short_description) RLIKE \"[[:<:]]"+strArray[i]+"[[:>:]]\"";
          //String QueryString = "select code, short_description from icd where lower(short_description) like ('%"+strArray[i]+"%')";
          
-         rs = s.executeQuery(QueryString);
-         System.out.println(strArray[i]);
+         rs = s.executeQuery(QueryString); 
       /*if(rs.next ()){//Use If Here not While  
           System.out.println(rs.getString(1));
           System.out.println(rs.getString(2)); 
@@ -84,10 +114,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
          out.println("<tr>");   
         String code = rs.getString("code"); 
         String short_description = rs.getString("short_description");
+        
+       //************************ Feature 3> Single objective search (medical scope)*********************\
         String desc=short_description.replace(" ", "+");
          out.print("<td><a href=\"http://icd10api.com/?code="+code+"&r=json&desc=short\">"+code+"</a></td>");
          out.print("<td><a href=\"https://scholar.google.ca/scholar?hl=en&q="+desc+"&btnG=&as_sdt=1%2C5&as_sdtp\">"+short_description + "</a></td>");
          out.println("</tr>"); 
+         //************************ Single objective Search *********************\
+         //************************ Non-Clumsiness (Tabular form) *********************\
       }
                    
       //rs.close();
