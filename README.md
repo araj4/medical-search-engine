@@ -41,3 +41,26 @@ https://www.cob.cms.hhs.gov/Section111/help/icd10.dx.codes.htm
 and 
 #
 http://icd10codelink.com/
+#
+Pre-requisites:
+#
+1) Java 7 or higher version
+#
+2) MySql
+#
+3) Apache Tomcat Server
+#
+4) Netbeans(optional if you wish to work on codes)
+
+#Setup Instructions:
+1_a) Setting up database: Create a database and name it web_info (also need to update the root password as per your database in the respective connector files).
+#
+1_b) Import the data to your database in a table named "icd" from ICD-10 data recorded in icd.csv file.
+#
+2) MySql-J-connector setting up: Download mysql-connector-java-5.1.41-bin and copy it in \web\WEB-INF folder of java
+#
+3_a) Servlet setup:Copy DatabaseConn.java file in \src\java of java
+#
+3_b) Copy web.xml in \web\WEB-INF folder of java
+#
+4)Setting up front-end:Copy find.jsp and test_connection.jsp along with all images specified in repository (with updated root password) in \web folder of java. Finally, you are all set to use this application.
