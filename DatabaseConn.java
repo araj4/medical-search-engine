@@ -117,8 +117,8 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         
        //************************ Feature 3> Single objective search (medical scope)*********************\
         String desc=short_description.replace(" ", "+");
-         out.print("<td><a href=\"http://icd10api.com/?code="+code+"&r=json&desc=short\">"+code+"</a></td>");
-         out.print("<td><a href=\"https://scholar.google.ca/scholar?hl=en&q="+desc+"&btnG=&as_sdt=1%2C5&as_sdtp\">"+short_description + "</a></td>");
+         out.print("<td><a href=\"http://icd10api.com/?code="+code+"&r=json&desc=short\"><font color=\"brown\"><b>"+code+"</b></font></a></td>");
+         out.print("<td><a href=\"https://scholar.google.ca/scholar?hl=en&q="+desc+"&btnG=&as_sdt=1%2C5&as_sdtp\"><font color=\"red\"><b>"+short_description + "</b></font></a></td>");
          out.println("</tr>"); 
          //************************ Single objective Search *********************\
          //************************ Non-Clumsiness (Tabular form) *********************\
