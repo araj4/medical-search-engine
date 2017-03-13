@@ -45,6 +45,8 @@ Copied web.xml and mysql-connector-java-5.1.41-bin in ..\web\WEB-INF of project
 #
 Copied DatabaseConn.java in ..\src\java folder of project
 #
+As on 13-March-2017: Implemented the changes in second page (result) for greater visibility.
+#
 The link for downloading the ICD 10 data :
 #
 https://www.cob.cms.hhs.gov/Section111/help/icd10.dx.codes.htm
