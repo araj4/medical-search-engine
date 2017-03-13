@@ -42,17 +42,17 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     PrintWriter out = response.getWriter();
     response.setContentType("text/html"); 
     out.println("<html>");
-    out.println("<head>");
+    /*out.println("<head>");
     out.println("<style>");
     out.println("body  {");
     out.println("background-image: url(\"bg1.jpg\");");
     out.println("background-repeat:no-repeat;");
     out.println("background-size:cover;");
-    out.println("}");
+    out.println("}");*/ 
     out.println("</style>");    
     out.println("</head>");
     out.println("<head><title>Disease Details</title></head>");
-    out.println("<body background=\"bg1.jpg\">");
+    out.println("<body>");
     out.println("<center><h1>What Are You Exactly Looking For?</h1>");
      //************************Feature 2> Non-Clumsiness *********************\
     out.println("<Table border=2><h2><tr><td><center><b> ICD-10 Codes</b></center></td><td><center><b> Disease Description and Related Journals</b></center></td></tr></h2>");
