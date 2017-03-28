@@ -55,7 +55,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     out.println("<body>");
     out.println("<center><h1>What Are You Exactly Looking For?</h1>");
      //************************Feature 2> Non-Clumsiness *********************\
-    out.println("<Table border=2><h2><tr><td><center><b> ICD-10 Codes</b></center></td><td><center><b> Disease Description and Related Journals</b></center></td></tr></h2>");
+    out.println("<Table border=2><h2><tr><td><center><b> ICD-10 Codes</b></center></td><td><center><b>Hierarchical Codes</b></center></td><td><center><b> Disease Description and Related Journals</b></center></td></tr></h2>");
     
       String connectionURL = "jdbc:mysql://localhost:3306/web_info";
       Connection connection=null;
@@ -102,7 +102,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             {
               
               s = connection.createStatement();
-         String QueryString = "select code, short_description from icd where  lower(short_description) RLIKE \"[[:<:]]"+strArray[i]+"[[:>:]]\"";
+         String QueryString = "select code,h_code, short_description from icd where  lower(short_description) RLIKE \"[[:<:]]"+strArray[i]+"[[:>:]]\"";
          //String QueryString = "select code, short_description from icd where lower(short_description) like ('%"+strArray[i]+"%')";
          
          rs = s.executeQuery(QueryString); 
@@ -111,13 +111,15 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
           System.out.println(rs.getString(2)); 
           }*/ 
         while (rs.next()) {
-         out.println("<tr>");   
+         out.println("<tr>"); 
         String code = rs.getString("code"); 
+        String h_code = rs.getString("h_code"); 
         String short_description = rs.getString("short_description");
         
        //************************ Feature 3> Single objective search (medical scope)*********************\
         String desc=short_description.replace(" ", "+");
-         out.print("<td><a href=\"http://icd10api.com/?code="+code+"&r=json&desc=short\"><font color=\"brown\"><b>"+code+"</b></font></a></td>");
+        out.print("<td><a><font color=\"brown\"><b>"+code+"</b></font></a></td>");
+         out.print("<td><a href=\"http://apps.who.int/classifications/icd10/browse/2016/en#/"+h_code+"\"><font color=\"brown\"><b>"+h_code+"</b></font></a></td>");
          out.print("<td><a href=\"https://scholar.google.ca/scholar?hl=en&q="+desc+"&btnG=&as_sdt=1%2C5&as_sdtp\"><font color=\"red\"><b>"+short_description + "</b></font></a></td>");
          out.println("</tr>"); 
          //************************ Single objective Search *********************\
