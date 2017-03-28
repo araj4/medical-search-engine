@@ -47,6 +47,10 @@ Copied DatabaseConn.java in ..\src\java folder of project
 #
 As on 13-March-2017: Implemented the changes in second page (result) for greater visibility.
 #
+As on 20-March-2017: Tried Selenium and WebLoad UI tools to fetch web content but got security errors.
+#
+As on 28-March-2017: Implemented the changes as per the comments added by Professor in our last presentation and implemented code to fetch the page for ICD codes description.
+#
 The link for downloading the ICD 10 data :
 #
 https://www.cob.cms.hhs.gov/Section111/help/icd10.dx.codes.htm
